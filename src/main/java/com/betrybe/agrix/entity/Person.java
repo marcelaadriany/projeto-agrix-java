@@ -2,7 +2,6 @@ package com.betrybe.agrix.entity;
 
 
 import com.betrybe.agrix.security.Role;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,71 +26,46 @@ public class Person implements UserDetails {
   @Column(unique = true)
   private String username;
 
-  @JsonIgnore
   private String password;
 
   private Role role;
 
-  /**
-   * Instantiates a new Person.
-   *
-   * @param username the username
-   * @param password the password
-   * @param role     the role
-   */
-  public Person(String username, String password, Role role) {
-    this.username = username;
-    this.password = password;
-    this.role = role;
+  public Person() {
   }
 
-  /**
-   * Gets id.
-   *
-   * @return the id
-   */
   public Long getId() {
     return id;
   }
 
-  /**
-   * Sets id.
-   *
-   * @param id the id
-   */
   public void setId(Long id) {
     this.id = id;
   }
 
+  @Override
   public String getUsername() {
     return username;
   }
 
   @Override
   public boolean isAccountNonExpired() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean isAccountNonLocked() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean isCredentialsNonExpired() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean isEnabled() {
-    return false;
+    return true;
   }
 
-  /**
-   * Sets username.
-   *
-   * @param username the username
-   */
   public void setUsername(String username) {
     this.username = username;
   }
@@ -101,33 +75,19 @@ public class Person implements UserDetails {
     return List.of();
   }
 
+  @Override
   public String getPassword() {
     return password;
   }
 
-  /**
-   * Sets password.
-   *
-   * @param password the password
-   */
   public void setPassword(String password) {
     this.password = password;
   }
 
-  /**
-   * Gets role.
-   *
-   * @return the role
-   */
   public Role getRole() {
     return role;
   }
 
-  /**
-   * Sets role.
-   *
-   * @param role the role
-   */
   public void setRole(Role role) {
     this.role = role;
   }
@@ -146,4 +106,3 @@ public class Person implements UserDetails {
         && Objects.equals(role, person.role);
   }
 }
-
