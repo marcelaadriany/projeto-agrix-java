@@ -76,5 +76,11 @@ Este projeto foi proposto pela [Trybe](https://www.betrybe.com/)
 
 ---
 
-<p align="center">Desenvolvido com 💚 por <a href="https://github.com/marcelaadriany" target="_blank">Marcela Andrade</a></p>
+<p align="center">
+  Desenvolvido por <strong>Marcela Andrade</strong> 💻  
+  <br>
+  📍 Niterói – RJ  
+  <br>
+  🔗 <a href="https://www.linkedin.com/in/marcelaadriany/">LinkedIn</a>
+</p>
 
